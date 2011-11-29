@@ -1,0 +1,158 @@
+body {
+	background-color:#F6F4F2;
+	font-family:"Helvetica Neue", Helvetica;
+	font-size:16px;
+}
+
+h1, ul, li {
+	margin:0px;
+	padding:0px;
+}
+
+#topbar {
+
+	background-color:#515151;
+	background:#515151 -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.2, #515151),
+	color-stop(0.8, #302F2D)
+	);
+
+	border-top:1px solid #919192;
+	height:32px;
+	left:0px;
+	position:fixed;
+	top:0px;
+	width:100%;
+}
+
+#sidebar {
+	background-color:#ECEAE7;
+	bottom:0px;
+	left:0px;
+	overflow:auto;
+	padding:20px 20px 0px 20px;
+	position:fixed;
+	text-align: left;
+	top:33px;
+	width:180px;
+}
+
+
+#scroller {
+	bottom:0px;
+	left:220px;
+	position:fixed;
+	overflow:auto;
+	right:0px;
+	top:33px;
+}
+
+
+#content {
+	padding:0px  20px;
+}
+
+#topbar h1 {
+	color:#F6F4F2;
+	font-size:18px;
+	font-weight:normal;
+	line-height:32px;
+	margin:0px;
+	text-align:center;
+	text-shadow:0px -1px 1px #222;
+	text-align:left;
+	margin-left:20px;
+}
+
+
+#sidebar h1 {
+	color:#000000;
+	font-size:18px;
+	padding:0px;
+	margin:30px 0px;
+	font-weight:normal;
+	text-shadow:#FFFFFF 0px 1px 0px;
+}
+
+#sidebar ul,
+#sidebar li {
+	margin:0px;
+	padding:0px;
+}
+
+#sidebar li,
+#sidebar li a {
+	color:#767573;
+	font-size:14px;
+	list-style:none;
+	margin:15px 0px;
+	text-shadow:#FFFFFF 0px 1px 1px;
+	display: block;
+	text-decoration: none;
+}
+
+#sidebar li a {
+	-webkit-transition:color .15s ease-out;
+}
+
+#sidebar li a:hover {
+	color:#3399FF;
+	-webkit-transition:color .15s ease-in;
+}
+
+#content {
+	font-size:13px;
+	line-height:1.5em;
+}
+
+#content h1 {
+	font-size:2em;
+	font-weight:normal;
+	margin:2.0em 0px 1.3em 0px;
+	padding-bottom:0.6em;
+}
+
+#content h2 {
+	color:#242220;
+	font-size:1.4em;
+	font-weight:bold;
+	margin:1.3em 0px 0.8em 0px;
+	text-shadow:#FFFFFF 0px 1px 1px;
+}
+
+#content h3 {
+	font-size:1em;
+	font-weight:bold;
+	margin:0.8em 0px 0.5em 0px;
+	text-shadow:#FFFFFF 0px 1px 1px;
+}
+
+hr {
+	display:none;
+	border:none;
+	margin:40px 0px;
+	border-top:1px solid #CCCCCC;
+	border-bottom:1px solid #FFFFFF;
+}
+
+p,blockquote,pre,ul {
+	margin:1em 0px;
+}
+
+
+ul {
+	margin-left:40px;
+}
+
+ul > li {
+	list-style:disc;
+	list-style-position:outside;
+}
+
+ul ul {
+	margin-bottom:0.5em;
+	margin-top:0.5em;
+}
