@@ -1,6 +1,6 @@
 //
 //  main.m
-//  WebViewExample
+//  CocoaWebView
 //
 
 #import <Cocoa/Cocoa.h>
