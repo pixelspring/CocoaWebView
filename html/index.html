@@ -6,7 +6,27 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script>
+
+function changeIcon(name) {
+	window.app.changeAppIcon_(name);
+}
+
+function showPanel(message) {
+	window.app.showPanel_(message);
+}
+
+function playSound(soundFile) {
+	window.app.playSound_(soundFile);
+}
+
+
+</script>
 </head>
+
+
+
 <body>
 
 <div id="topbar">
@@ -18,12 +38,10 @@
 <h1>Sidebar Scroll</h1>
 <ul>
 <li><a href="#" id="toggle">Toggle P Tag</a></li>
-<li><a href="#" onClick="window.AppDelegate.showMessage_('Message from js to Obj-C!');">Show Message</a></li>
-<li><a href="#">Option</a></li>
-<li><a href="#">Option</a></li>
-<li><a href="#">Option</a></li>
-<li><a href="#">Option</a></li>
-<li><a href="#">Option</a></li>
+<li><a href="#" onClick="showPanel('Message from js to Obj-C!');">Show Message Panel</a></li>
+<li><a href="#" onclick="changeIcon('css.png')">Change App Icon - CSS</a></li>
+<li><a href="#" onclick="changeIcon('js.png')">Change App Icon - JS</a></li>
+<li><a href="#" onclick="playSound('riff.wav')">Play Sound</a></li>
 <li><a href="#">Option</a></li>
 <li><a href="#">Option</a></li>
 <li><a href="#">Option</a></li>

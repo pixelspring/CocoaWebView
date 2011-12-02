@@ -2,19 +2,25 @@
 //  AppDelegate.h
 //  CocoaWebView
 //
+//  Created by Mike Seaby on 1/12/2011.
+//  Copyright Mike Seaby 2011. All rights reserved.
+//
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
-	NSWindow *window;
-	IBOutlet WebView *webView;
+	IBOutlet id webView;
+	IBOutlet NSWindow *window;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-@property (nonatomic, retain) IBOutlet WebView *webView;
+- (IBAction)bringMainWindowToFront:(id)sender;
+- (NSString *)appURL;
 
-// This method is called from JavaScript on the web page.
-- (void)showMessage:(NSString *)message;
+// Called via js
+- (void)changeAppIcon:(NSString *)iconName;
+- (void)showPanel:(NSString *)message;
+
+- (IBAction)playSound:(NSString *)soundFile;
 
 @end

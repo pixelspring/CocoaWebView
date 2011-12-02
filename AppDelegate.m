@@ -2,44 +2,54 @@
 //  AppDelegate.m
 //  CocoaWebView
 //
+//  Created by Mike Seaby on 1/12/2011.
+//  Copyright Mike Seaby 2011. All rights reserved.
+//
 
 #import "AppDelegate.h"
 
 @implementation AppDelegate
 
-@synthesize window;
-@synthesize webView;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[webView setMainFrameURL:[self appURL]];
 }
 
-- (void)awakeFromNib {
-    
-	NSString *resourcesPath = [[NSBundle mainBundle] resourcePath];
-	NSString *htmlPath = [resourcesPath stringByAppendingString:@"/html/index.htm"];
-	[[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]]];
-    
-    [window setDelegate:self];
-	
-	// Can use this to set window to coloured background: MainMenu.xib needs window appearance "textured" if so.
-	//[window setBackgroundColor:[NSColor redColor]];
-	
-	// Configure webView to let JavaScript talk to this object.
-    [[webView windowScriptObject] setValue:self forKey:@"AppDelegate"];
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
+	[self bringMainWindowToFront:nil];
+	return YES;
 }
 
-// Quit the application when window closed
-- (void)windowWillClose:(NSNotification *)aNotification {
-	[NSApp terminate:self];
+- (IBAction)bringMainWindowToFront:(id)sender {
+	[window makeKeyAndOrderFront:sender];
+	if ([[webView mainFrameURL] isEqualTo:@""]) {
+		[webView setMainFrameURL:[self appURL]];
+	}
+}
+
+- (void)windowWillClose:(NSNotification *)notification {
+	[webView setMainFrameURL:@""];
 }
 
 
+// Should the app Quit when window closed?
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
+// Path to the first page to load (index.html in the "html" folder)
+- (NSString *)appURL {
+	return [[[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"html"] absoluteString];
+}
 
 
 
 
+// Make methods available to javascript
 
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)cwvSelector
++ (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector { return NO; }
+/* + (BOOL)isSelectorExcludedFromWebScript:(SEL)cwvSelector
 {
     // For security, you should explicitly allow a selector to be called via JavaScript.
     
@@ -48,14 +58,38 @@
     }
     
     return YES; // disallow everything else
+}*/
+
+
+// Delegate method triggered every page load before JavaScript run
+- (void)webView:(WebView *)webView windowScriptObjectAvailable:(WebScriptObject *)windowScriptObject {
+	[windowScriptObject setValue:self forKey:@"app"]; // Let class be usable through "window.app" object in JavaScript
 }
 
 
+// ------------------------------------------------------------------------------------------------
 
-- (void)showMessage:(NSString *)message
+
+// Change the apps dock icon via JavaScript
+- (void)changeAppIcon:(NSString *)iconName {
+	[NSApp setApplicationIconImage:[NSImage imageNamed:iconName]];
+}
+
+
+// Show an alert panel
+- (void)showPanel:(NSString *)message
 {
     // Called via <li> in sidebar div
     NSRunAlertPanel(@"Message from JavaScript", message, nil, nil, nil);
 }
 
+// Play a sound file
+- (void)playSound:(NSString *)soundFile //:(NSString *)looping
+
+{
+	NSSound* sound = [NSSound soundNamed: soundFile];
+	[sound play];
+	//[sound setLoops:YES];
+	NSLog(@"Sound file is: %@", soundFile);
+}
 @end

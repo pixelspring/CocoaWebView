@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		1E86247D1487E8F300E5A344 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E86247B1487E8F300E5A344 /* MainMenu.xib */; };
+		1E8624851487FA3900E5A344 /* js.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8624841487FA3900E5A344 /* js.png */; };
+		1E8624871487FA4300E5A344 /* css.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8624861487FA4300E5A344 /* css.png */; };
+		1E86248B148807AE00E5A344 /* riff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E86248A148807AE00E5A344 /* riff.wav */; };
 		1EC12F6114852B72005633DD /* cwvicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1EC12F6014852B72005633DD /* cwvicon.icns */; };
 		1EC12F6314852DA9005633DD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1EC12F6214852DA9005633DD /* Credits.rtf */; };
 		256AC3DA0F4B6AC300CF3369 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* AppDelegate.m */; };
@@ -22,10 +25,12 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1E86247C1487E8F300E5A344 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1E8624841487FA3900E5A344 /* js.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = js.png; sourceTree = "<group>"; };
+		1E8624861487FA4300E5A344 /* css.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = css.png; sourceTree = "<group>"; };
+		1E86248A148807AE00E5A344 /* riff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = riff.wav; sourceTree = "<group>"; };
 		1EC12F6014852B72005633DD /* cwvicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cwvicon.icns; sourceTree = "<group>"; };
 		1EC12F6214852DA9005633DD /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		1EC12F69148539BD005633DD /* CocoaWebView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CocoaWebView.entitlements; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* CocoaWebView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaWebView_Prefix.pch; sourceTree = "<group>"; };
@@ -90,7 +95,9 @@
 		29B97314FDCFA39411CA2CEA /* WebViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				1EC12F69148539BD005633DD /* CocoaWebView.entitlements */,
+				1E86248A148807AE00E5A344 /* riff.wav */,
+				1E8624841487FA3900E5A344 /* js.png */,
+				1E8624861487FA4300E5A344 /* css.png */,
 				A8D6699313303F8A00C9B726 /* html */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -116,7 +123,7 @@
 				1EC12F6014852B72005633DD /* cwvicon.icns */,
 				8D1107310486CEB800E47090 /* CocoaWebView-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				1E86247B1487E8F300E5A344 /* MainMenu.xib */,
 				1EC12F6214852DA9005633DD /* Credits.rtf */,
 			);
 			name = Resources;
@@ -185,10 +192,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				A8D669AA13303F8A00C9B726 /* html in Resources */,
 				1EC12F6114852B72005633DD /* cwvicon.icns in Resources */,
 				1EC12F6314852DA9005633DD /* Credits.rtf in Resources */,
+				1E86247D1487E8F300E5A344 /* MainMenu.xib in Resources */,
+				1E8624851487FA3900E5A344 /* js.png in Resources */,
+				1E8624871487FA4300E5A344 /* css.png in Resources */,
+				1E86248B148807AE00E5A344 /* riff.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,10 +225,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+		1E86247B1487E8F300E5A344 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1DDD58150DA1D0A300B32029 /* English */,
+				1E86247C1487E8F300E5A344 /* English */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
