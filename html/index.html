@@ -3,6 +3,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
 
+<title>THE TITLE OF THE PAGE</title>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
@@ -18,16 +20,19 @@ function showPanel(message) {
 }
 
 function playSound(soundFile) {
-	window.app.playSound_(soundFile);
+	window.app.playSound_(soundFile, isLooped);
 }
 
-
+function setWindowTitle(windowTitle) {
+	window.app.setWindowTitle_(windowTitle);
+}
+	
 </script>
 </head>
 
 
 
-<body>
+<body onLoad="setTitle()">
 
 <div id="topbar">
 <h1>CocoaWebView Test</h1>
@@ -41,8 +46,8 @@ function playSound(soundFile) {
 <li><a href="#" onClick="showPanel('Message from js to Obj-C!');">Show Message Panel</a></li>
 <li><a href="#" onclick="changeIcon('css.png')">Change App Icon - CSS</a></li>
 <li><a href="#" onclick="changeIcon('js.png')">Change App Icon - JS</a></li>
-<li><a href="#" onclick="playSound('riff.wav')">Play Sound</a></li>
-<li><a href="#">Option</a></li>
+<li><a href="#" onclick="playSound('riff.wav', 'YES')">Play Sound</a></li>
+<li><a href="#" onclick="setWindowTitle('My Great Title!')">Set Window Title</a></li>
 <li><a href="#">Option</a></li>
 <li><a href="#">Option</a></li>
 <li><a href="#">Option</a></li>

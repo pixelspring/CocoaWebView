@@ -137,6 +137,10 @@ hr {
 	border-bottom:1px solid #FFFFFF;
 }
 
+p	{
+	text-shadow:#FFF 0px 1px 1px;
+}
+
 p,blockquote,pre,ul {
 	margin:1em 0px;
 }

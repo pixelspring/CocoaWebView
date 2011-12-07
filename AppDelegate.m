@@ -84,12 +84,20 @@
 }
 
 // Play a sound file
-- (void)playSound:(NSString *)soundFile //:(NSString *)looping
-
+- (void)playSound:(NSString *)soundFile isLooped:(BOOL)looping
 {
 	NSSound* sound = [NSSound soundNamed: soundFile];
 	[sound play];
 	//[sound setLoops:YES];
 	NSLog(@"Sound file is: %@", soundFile);
 }
+
+// Change window title
+- (void)setWindowTitle:(NSString *)windowTitle {
+	NSLog(@"Window Title set to: %@", windowTitle);
+	[window setTitle:windowTitle];
+}
+
+
+
 @end
